@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#235b2b">
+  <title>Todas las bebidas | Probiotika</title>
+  <meta name="description" content="Explora kombucha cristal, kombucha pocket, tepache y paquetes Probiotika.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script defer src="assets/js/catalogo.js"></script>
+</head>
+<body>
+  <div class="announcement">
+    <span>Entrega refrigerada</span>
+    <span>Compra segura</span>
+    <span>Hecho en México</span>
+  </div>
+
+  <header class="site-header">
+    <a class="brand brand-logo" href="index.html" aria-label="Probiotika, inicio">
+      <img src="assets/images/logo-probiotika.png" alt="Probiotika · Elixir ancestral funcional">
+    </a>
+
+    <button class="menu-button" id="menuButton" aria-expanded="false" aria-controls="mainNav">☰</button>
+
+    <nav id="mainNav" class="main-nav" aria-label="Navegación principal">
+      <a href="bebidas.html?tipo=kombucha">Kombucha</a>
+      <a href="bebidas.html?tipo=tepache">Tepache</a>
+      <a href="index.html#pack">Paquetes</a>
+      <a href="index.html#historia">Conócenos</a>
+      <a href="index.html#mayoreo">Mayoreo</a>
+      <a href="index.html#faq">FAQ</a>
+    </nav>
+
+    <a class="cart-button" href="index.html#favoritos">Carrito <span>0</span></a>
+  </header>
+
+  <main>
+    <section class="catalog-hero">
+      <p class="eyebrow">TODAS LAS BEBIDAS</p>
+      <h1>Encuentra tu próxima favorita.</h1>
+      <p class="hero-description">Explora kombucha cristal, kombucha pocket, tepache y paquetes para descubrir nuevos sabores.</p>
+    </section>
+
+    <div class="catalog-toolbar" aria-label="Filtros de catálogo">
+      <button class="filter-button is-active" data-filter="todos">Todas</button>
+      <button class="filter-button" data-filter="cristal">Kombucha Cristal</button>
+      <button class="filter-button" data-filter="pocket">Kombucha Pocket</button>
+      <button class="filter-button" data-filter="tepache">Tepache</button>
+      <button class="filter-button" data-filter="paquetes">Paquetes</button>
+    </div>
+
+    <section class="section">
+      <div class="product-grid" id="catalogGrid"></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand">
+      <img src="assets/images/logo-probiotika.png" alt="Probiotika">
+    </div>
+    <div><strong>Comprar</strong><a href="bebidas.html?tipo=cristal">Cristal</a><a href="bebidas.html?tipo=pocket">Pocket</a><a href="bebidas.html?tipo=tepache">Tepache</a></div>
+    <div><strong>Ayuda</strong><a href="index.html#faq">Preguntas frecuentes</a><a href="index.html#mayoreo">Mayoreo</a></div>
+    <small>© 2026 Probiotika. Prototipo de catálogo.</small>
+  </footer>
+</body>
+</html>
