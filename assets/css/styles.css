@@ -1,6 +1,3 @@
-styles_probiotika_v5_movimiento_exacto_v2.css
-
-
 :root{
   --green:#235b2b;
   --green-2:#3f7f3b;
@@ -134,7 +131,6 @@ footer{background:#13231a;color:white;padding:3rem clamp(1rem,6vw,6rem);display:
   .scobyto {
     top: 8%;
     right: 3.5%;
-    transform: scale(.9);
   }
 
   .trust-strip {
@@ -187,7 +183,6 @@ footer{background:#13231a;color:white;padding:3rem clamp(1rem,6vw,6rem);display:
   .bottle-four { height: 275px; }
 
   .scobyto {
-    transform: scale(.82);
   }
 }
 
@@ -262,7 +257,6 @@ footer{background:#13231a;color:white;padding:3rem clamp(1rem,6vw,6rem);display:
   .scobyto {
     top: 5% !important;
     right: 2.5% !important;
-    transform: scale(.76) !important;
   }
 
   .trust-strip {
@@ -338,7 +332,6 @@ footer{background:#13231a;color:white;padding:3rem clamp(1rem,6vw,6rem);display:
   .scobyto {
     top: 8% !important;
     right: 3.5% !important;
-    transform: scale(.9) !important;
     animation: float 3.2s ease-in-out infinite !important;
   }
 
@@ -371,7 +364,6 @@ footer{background:#13231a;color:white;padding:3rem clamp(1rem,6vw,6rem);display:
   }
 
   .scobyto {
-    transform: scale(.78) !important;
     animation: float 3.2s ease-in-out infinite !important;
   }
 }
@@ -379,46 +371,18 @@ footer{background:#13231a;color:white;padding:3rem clamp(1rem,6vw,6rem);display:
 
 
 
-@keyframes scobytoFloatDesktop {
-  0%,
-  100% {
-    transform: translateY(0) rotate(0deg) scale(0.9);
-  }
-
-  50% {
-    transform: translateY(-10px) rotate(2deg) scale(0.9);
-  }
-}
-
-@media (max-width: 620px) {
-  .scobyto {
-    transform: none !important;
-    animation: scobytoFloatMobile 3.2s ease-in-out infinite !important;
-  }
-
-  @keyframes scobytoFloatMobile {
-    0%,
-    100% {
-      transform: translateY(0) rotate(0deg) scale(0.78);
-    }
-
-    50% {
-      transform: translateY(-8px) rotate(2deg) scale(0.78);
-    }
-  }
-}
-
-
 /* =========================================================
-   FIX DEFINITIVO — SCOBYTO CON MOVIMIENTO EXACTO DE V2
+   FIX DEFINITIVO SCOBYTO — MOVIMIENTO EXACTO DE V2
+   No usar transform: ... !important en .scobyto
+   porque bloquea la animación.
    ========================================================= */
 .scobyto {
-  animation: float 3.2s ease-in-out infinite !important;
-  transform-origin: center center !important;
+  animation: scobytoFloatExactV2 3.2s ease-in-out infinite !important;
+  transform-origin: center center;
   will-change: transform;
 }
 
-@keyframes float {
+@keyframes scobytoFloatExactV2 {
   0%,
   100% {
     transform: translateY(0) rotate(0deg);
@@ -440,6 +404,6 @@ footer{background:#13231a;color:white;padding:3rem clamp(1rem,6vw,6rem);display:
   .scobyto {
     top: 5% !important;
     right: 2% !important;
-    animation: float 3.2s ease-in-out infinite !important;
+    animation: scobytoFloatExactV2 3.2s ease-in-out infinite !important;
   }
 }
