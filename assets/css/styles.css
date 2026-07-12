@@ -198,14 +198,14 @@ footer{background:#13231a;color:white;padding:3rem clamp(1rem,6vw,6rem);display:
 
 
 /* =========================================================
-   V6 LIMPIA
-   - Base exacta de V2
-   - Conserva franja verde superior
-   - Conserva animación original de Scobyto
-   - Añade hero compacto y soporte para logo real
+   V7 — BASE V2 INTACTA
+   Movimiento de Scobyto idéntico a V2:
+   - base transform: scale(.9)
+   - keyframe intermedio: translateY(-8px) rotate(2deg)
+   El navegador interpola también la escala.
    ========================================================= */
 
-/* Logo real en encabezado */
+/* Soporte para logotipo real */
 .brand-logo {
   display: inline-flex !important;
   align-items: center;
@@ -230,7 +230,7 @@ footer{background:#13231a;color:white;padding:3rem clamp(1rem,6vw,6rem);display:
   filter: brightness(0) invert(1);
 }
 
-/* Hero compacto en escritorio para mostrar también la franja de confianza */
+/* Ajuste de altura, sin modificar transform ni animation de Scobyto */
 @media (min-width: 1001px) {
   .announcement {
     min-height: 34px !important;
@@ -294,10 +294,12 @@ footer{background:#13231a;color:white;padding:3rem clamp(1rem,6vw,6rem);display:
     height: 47px !important;
   }
 
-  /* SOLO posición de Scobyto. No se toca transform ni animation. */
+  /* Idéntico a V2: esta escala base produce el efecto de crecer/disminuir */
   .scobyto {
     top: 8% !important;
     right: 3.5% !important;
+    transform: scale(.9);
+    animation: float 3.2s ease-in-out infinite;
   }
 
   .scobyto-face {
@@ -318,35 +320,10 @@ footer{background:#13231a;color:white;padding:3rem clamp(1rem,6vw,6rem);display:
   }
 }
 
-@media (min-width: 1001px) and (max-height: 760px) {
-  .hero {
-    height: calc(100vh - 166px) !important;
-    min-height: 460px !important;
-    max-height: 590px !important;
-  }
-
-  h1 {
-    font-size: clamp(3rem, 4.35vw, 4.55rem) !important;
-  }
-
-  .hero-copy {
-    padding-top: 1.25rem !important;
-    padding-bottom: 1rem !important;
-  }
-
-  .bottle {
-    width: 72px !important;
-    height: 245px !important;
-  }
-
-  .bottle-one { height: 225px !important; }
-  .bottle-two { height: 265px !important; }
-  .bottle-three { height: 250px !important; }
-  .bottle-four { height: 220px !important; }
-
-  .trust-strip {
-    height: 64px !important;
-    min-height: 64px !important;
+/* Keyframe literal de V2 */
+@keyframes float {
+  50% {
+    transform: translateY(-8px) rotate(2deg);
   }
 }
 
@@ -365,5 +342,11 @@ footer{background:#13231a;color:white;padding:3rem clamp(1rem,6vw,6rem);display:
   .brand-logo img {
     width: 132px;
     max-height: 42px;
+  }
+
+  /* Idéntico al responsive original: escala base menor */
+  .scobyto {
+    transform: scale(.78);
+    animation: float 3.2s ease-in-out infinite;
   }
 }
