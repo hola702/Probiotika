@@ -131,6 +131,7 @@ footer{background:#13231a;color:white;padding:3rem clamp(1rem,6vw,6rem);display:
   .scobyto {
     top: 8%;
     right: 3.5%;
+    transform: scale(.9);
   }
 
   .trust-strip {
@@ -183,6 +184,7 @@ footer{background:#13231a;color:white;padding:3rem clamp(1rem,6vw,6rem);display:
   .bottle-four { height: 275px; }
 
   .scobyto {
+    transform: scale(.82);
   }
 }
 
@@ -196,9 +198,47 @@ footer{background:#13231a;color:white;padding:3rem clamp(1rem,6vw,6rem);display:
 
 
 /* =========================================================
-   V3 — HERO + TRUST STRIP COMPLETOS EN EL PRIMER PANTALLAZO
+   V6 LIMPIA
+   - Base exacta de V2
+   - Conserva franja verde superior
+   - Conserva animación original de Scobyto
+   - Añade hero compacto y soporte para logo real
    ========================================================= */
+
+/* Logo real en encabezado */
+.brand-logo {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 190px;
+}
+
+.brand-logo img {
+  display: block;
+  width: 190px;
+  height: auto;
+  max-height: 58px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.footer-brand img {
+  display: block;
+  width: 210px;
+  max-width: 100%;
+  height: auto;
+  filter: brightness(0) invert(1);
+}
+
+/* Hero compacto en escritorio para mostrar también la franja de confianza */
 @media (min-width: 1001px) {
+  .announcement {
+    min-height: 34px !important;
+    display: flex !important;
+    background: var(--green) !important;
+    color: white !important;
+  }
+
   .hero {
     height: calc(100vh - 176px) !important;
     min-height: 500px !important;
@@ -254,9 +294,20 @@ footer{background:#13231a;color:white;padding:3rem clamp(1rem,6vw,6rem);display:
     height: 47px !important;
   }
 
+  /* SOLO posición de Scobyto. No se toca transform ni animation. */
   .scobyto {
-    top: 5% !important;
-    right: 2.5% !important;
+    top: 8% !important;
+    right: 3.5% !important;
+  }
+
+  .scobyto-face {
+    width: 96px !important;
+    height: 60px !important;
+  }
+
+  .scobyto-message {
+    display: block !important;
+    max-width: 190px !important;
   }
 
   .trust-strip {
@@ -299,53 +350,6 @@ footer{background:#13231a;color:white;padding:3rem clamp(1rem,6vw,6rem);display:
   }
 }
 
-
-/* =========================================================
-   V4 — LOGO REAL + SCOBYTO RESTAURADO COMO EN V2
-   ========================================================= */
-.brand-logo {
-  display: inline-flex !important;
-  align-items: center;
-  justify-content: flex-start;
-  min-width: 190px;
-}
-
-.brand-logo img {
-  display: block;
-  width: 190px;
-  height: auto;
-  max-height: 58px;
-  object-fit: contain;
-  object-position: left center;
-}
-
-.footer-brand img {
-  display: block;
-  width: 210px;
-  max-width: 100%;
-  height: auto;
-  filter: brightness(0) invert(1);
-}
-
-/* Scobyto vuelve al tamaño y movimiento visual de V2 */
-@media (min-width: 1001px) {
-  .scobyto {
-    top: 8% !important;
-    right: 3.5% !important;
-    animation: float 3.2s ease-in-out infinite !important;
-  }
-
-  .scobyto-face {
-    width: 96px !important;
-    height: 60px !important;
-  }
-
-  .scobyto-message {
-    display: block !important;
-    max-width: 190px !important;
-  }
-}
-
 @media (max-width: 1000px) {
   .brand-logo {
     min-width: 150px;
@@ -361,49 +365,5 @@ footer{background:#13231a;color:white;padding:3rem clamp(1rem,6vw,6rem);display:
   .brand-logo img {
     width: 132px;
     max-height: 42px;
-  }
-
-  .scobyto {
-    animation: float 3.2s ease-in-out infinite !important;
-  }
-}
-
-
-
-
-/* =========================================================
-   FIX DEFINITIVO SCOBYTO — MOVIMIENTO EXACTO DE V2
-   No usar transform: ... !important en .scobyto
-   porque bloquea la animación.
-   ========================================================= */
-.scobyto {
-  animation: scobytoFloatExactV2 3.2s ease-in-out infinite !important;
-  transform-origin: center center;
-  will-change: transform;
-}
-
-@keyframes scobytoFloatExactV2 {
-  0%,
-  100% {
-    transform: translateY(0) rotate(0deg);
-  }
-
-  50% {
-    transform: translateY(-8px) rotate(2deg);
-  }
-}
-
-@media (min-width: 1001px) {
-  .scobyto {
-    top: 8% !important;
-    right: 3.5% !important;
-  }
-}
-
-@media (max-width: 620px) {
-  .scobyto {
-    top: 5% !important;
-    right: 2% !important;
-    animation: scobytoFloatExactV2 3.2s ease-in-out infinite !important;
   }
 }
